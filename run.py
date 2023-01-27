@@ -10,8 +10,6 @@ def clear_screen():
 custom_fig = Figlet(font='rozzo')
 print(custom_fig.renderText('Battleship!'))
 
-
-    """intro words to the welcome screen, typed in slow motion"""
 intro_string = ("War is upon us! Only the strongest can suvive!\n"
 
 "Do you have the skills to defeat your enemy?\n")
@@ -36,17 +34,18 @@ for char in welcome_string:
     """pause between new page"""
 time.sleep(2) 
 
-    """clears screen ready for game""""
 clear_screen()
 
 board = []
 
 print (" ", 1,2,3,4,5)
+
+
 for i in range(5):
     board.append([str(i+1)] + ["0"]*5)
 
 def print_board(board):
-    """Prints the board in the terminal screen."""
+
     for i in board:
         print(" ".join(i))
 
