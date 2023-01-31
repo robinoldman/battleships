@@ -60,12 +60,14 @@ def computer_col(board):
 boat_row = computer_row(board)
 boat_col = computer_col(board)
 
+
 wrong_guesses = 0
+score = 0
 
 while True:
     while True:
         try:
-            player_row = int(input("Guess row:"))
+            player_row = int(input("\nGuess row:"))
             player_col = int(input("Guess column:"))
             if player_row in range(1, len(board)+1) and player_col in range(1, len(board[0])+1):
                 break
@@ -73,16 +75,22 @@ while True:
                 print("Your input is not within the valid range, please try again.")
         except ValueError:
             print("Your input is not a valid integer, please try again.")
+    
+
     print(f"{wrong_guesses} out of 6 wrong guesses")
+    print (f"your score is: {score}")
+    
     player_row -= 1
     player_col -= 1
 
+
     if player_row == boat_row and player_col == boat_col:
         print("You sank my battleship!")
+        score += 1
     else:
         print("Sorry, that was a wrong guess.")
         wrong_guesses += 1
-        if wrong_guesses >= 6:
+        if wrong_guesses >= 7:
             print ("You have made too many wrong guesses. You have lost")
             break
 
