@@ -1,12 +1,13 @@
 from pyfiglet import Figlet
+from random import randint
 import os
 import time
 
 def clear_screen():
     """Clears the terminal screen."""
     os.system('clear' if os.name == 'posix' else 'cls')
-
-    """add art graphicsd to the welcome screen """
+"""
+    #add art graphicsd to the welcome screen 
 custom_fig = Figlet(font='rozzo')
 print(custom_fig.renderText('Battleship!'))
 
@@ -18,22 +19,23 @@ for char in intro_string:
     print(char, end="", flush=True)
     time.sleep(0.1)
 
-    """user enters name"""
+    #user enters name
+    
 name = input("What's your name ally? ")
 
 for char in name:
     print(char, end="", flush=True)
     time.sleep(0.1)
     
-welcome_string = " Welcome, " + name + "!"
+welcome_string = ", Welcome!"
 
 for char in welcome_string:
     print(char, end="", flush=True)
     time.sleep(0.1)
 
-    """pause between new page"""
+    #pause between new page
 time.sleep(2) 
-
+"""
 clear_screen()
 
 board = []
@@ -50,3 +52,25 @@ def print_board(board):
         print(" ".join(i))
 
 print_board(board)
+
+def computer_row(board):
+    return randint(0,len(board)-1)
+
+def computer_col(board):
+    return randint(0,len(board[0])-1)
+
+
+boat_row = computer_row(board)
+boat_col = computer_col(board)
+
+player_row =int(input("Guess row:"))
+player_col =int(input("Guess column:"))
+
+
+
+print (boat_row)
+print (boat_col)
+
+
+
+
