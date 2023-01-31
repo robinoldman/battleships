@@ -40,36 +40,39 @@ clear_screen()
 
 board = []
 
-print (" ", 1,2,3,4,5)
-
+print("  1 2 3 4 5")
 
 for i in range(5):
     board.append([str(i+1)] + ["0"]*5)
 
 def print_board(board):
-
     for i in board:
         print(" ".join(i))
 
 print_board(board)
 
 def computer_row(board):
-    return randint(0,len(board)-1)
+    return randint(0, len(board)-1)
 
 def computer_col(board):
-    return randint(0,len(board[0])-1)
-
+    return randint(0, len(board[0])-1)
 
 boat_row = computer_row(board)
 boat_col = computer_col(board)
 
-player_row =int(input("Guess row:"))
-player_col =int(input("Guess column:"))
+while True:
+    try:
+        player_row = int(input("Guess row:"))
+        player_col = int(input("Guess column:"))
+        if player_row in range(1, len(board)+1) and player_col in range(1, len(board[0])+1):
+            break
+        else:
+            print("Your input is not within the valid range, please try again.")
+    except ValueError:
+        print("Your input is not a valid integer, please try again.")
 
-
-
-print (boat_row)
-print (boat_col)
+print(boat_row)
+print(boat_col)
 
 
 
