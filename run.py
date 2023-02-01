@@ -41,6 +41,7 @@ clear_screen()
 board = []
 board2 = []
 
+print("player 1")
 print("  1 2 3 4 5")
 
 for i in range(5):
@@ -57,6 +58,7 @@ def print_board2(board2):
 
 print_board(board)
 print("\n")
+print("player 2")
 print("  1 2 3 4 5")
 print_board2(board2)
 
@@ -85,8 +87,8 @@ while True:
             print("Your input is not a valid integer, please try again.")
     
 
-            print(f"{wrong_guesses} out of 6 wrong guesses")
-            print (f"your score is: {score}")
+        print(f"{wrong_guesses} out of 6 wrong guesses")
+        print (f"your score is: {score}")
 
     player_row -= 1
     player_col -= 1
@@ -95,6 +97,9 @@ while True:
         print("You sank my battleship!")
         board[player_row][player_col] = "-"
         score += 1
+        print("\n")
+        print("player 1")
+        print("  1 2 3 4 5")
         print_board(board)
         boat_row = computer_row(board)
         boat_col = computer_col(board)
@@ -102,6 +107,9 @@ while True:
         print("Sorry, that was a wrong guess.")
         board[player_row][player_col] = "X"
         wrong_guesses += 1
+        print("\n")
+        print("player 1")
+        print("  1 2 3 4 5")
         print_board(board)
         if wrong_guesses >= 6:
             print("You have made too many wrong guesses. You have lost")
