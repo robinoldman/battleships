@@ -39,7 +39,7 @@ time.sleep(2)
 clear_screen()
 
 board = []
-board2 =[]
+board2 = []
 
 print("  1 2 3 4 5")
 
@@ -52,7 +52,7 @@ def print_board(board):
         print(" ".join(i))
 
 def print_board2(board2):
-    for i in board:
+    for i in board2:
         print(" ".join(i))
 
 print_board(board)
@@ -68,7 +68,6 @@ def computer_col(board):
 
 boat_row = computer_row(board)
 boat_col = computer_col(board)
-
 
 wrong_guesses = 0
 score = 0
@@ -94,15 +93,23 @@ while True:
 
     if player_row == boat_row and player_col == boat_col:
         print("You sank my battleship!")
+        board[player_row][player_col] = "-"
         score += 1
+        print_board(board)
         boat_row = computer_row(board)
         boat_col = computer_col(board)
     else:
         print("Sorry, that was a wrong guess.")
+        board[player_row][player_col] = "X"
         wrong_guesses += 1
-        if wrong_guesses >= 7:
-            print ("You have made too many wrong guesses. You have lost")
-    
+        print_board(board)
+        if wrong_guesses >= 6:
+            print("You have made too many wrong guesses. You have lost")
+            board = board2
+    # reset the number of wrong guesses
+            wrong_guesses = 0
+
+
 
 print(boat_row)
 print(boat_col)
