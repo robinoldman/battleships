@@ -39,17 +39,26 @@ time.sleep(2)
 clear_screen()
 
 board = []
+board2 =[]
 
 print("  1 2 3 4 5")
 
 for i in range(5):
     board.append([str(i+1)] + ["0"]*5)
+    board2.append([str(i+1)] + ["0"]*5)
 
 def print_board(board):
     for i in board:
         print(" ".join(i))
 
+def print_board2(board2):
+    for i in board:
+        print(" ".join(i))
+
 print_board(board)
+print("\n")
+print("  1 2 3 4 5")
+print_board2(board2)
 
 def computer_row(board):
     return randint(0, len(board)-1)
@@ -77,23 +86,22 @@ while True:
             print("Your input is not a valid integer, please try again.")
     
 
-    print(f"{wrong_guesses} out of 6 wrong guesses")
-    print (f"your score is: {score}")
-    
+            print(f"{wrong_guesses} out of 6 wrong guesses")
+            print (f"your score is: {score}")
+
     player_row -= 1
     player_col -= 1
-
 
     if player_row == boat_row and player_col == boat_col:
         print("You sank my battleship!")
         score += 1
+        boat_row = computer_row(board)
+        boat_col = computer_col(board)
     else:
         print("Sorry, that was a wrong guess.")
         wrong_guesses += 1
         if wrong_guesses >= 7:
             print ("You have made too many wrong guesses. You have lost")
-            break
-
     
 
 print(boat_row)
