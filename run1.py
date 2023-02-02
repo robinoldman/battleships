@@ -53,49 +53,44 @@ while ship_count < 8:
 place_computer_ships(board_2)
 
 # show player 1 the computer's ships
-print("\nComputer ships placed on board 2:")
-for i in range(8):
-    for j in range(8):
-        if board_2[i][j] == "S":
-            board_2[i][j] = "S"
-print_boards(board_1, board_2)
 
-for i in range(8):
-    for j in range(8):
-        if board_2[i][j] == "S":
-            board_2[i][j] = "S"
 
-# start playing
-while True:
-    # player 1 turn
-    print("\nPlayer 1's turn:")
-    guess = input("Guess the coordinates of computer's ship (e.g. A1): ")
-    x = ord(guess[0].upper()) - 65
-    y = int(guess[1]) - 1
-    if board_2[x][y] == "S":
-        board_2[x][y] = "S"
-        print("Hit!")
-    else:
-        board_2[x][y] = "X"
-        print("Miss!")
-    print_boards(board_1, board_2)
-    # check if player 1 won
-    if "S" not in board_2:
-        print("Player 1 won the game!")
-        break
-    # computer turn
-    print("\nComputer's turn:")
-    x = randint(0, 7)
-    y = randint(0, 7)
-    if board_1[x][y] == "S":
-        board_1[x][y] = "S"
-        print("Computer hit!")
-    else:
-        board_1[x][y] = "X"
-        print("Computer missed!")
-    print_boards(board_1, board_2)
-    # check if computer won
-    if "S" not in board_1:
-        print("Computer won the game!")
-        break
-    time.sleep(2)
+def play_game():
+    while True:
+        # player 1 turn
+        print("\nPlayer 1's turn:")
+        guess = input("Guess the coordinates of computer's ship (e.g. A1): ")
+        x = ord(guess[0].upper()) - 65
+        y = int(guess[1]) - 1
+        if board_2[x][y] == "S":
+            board_2[x][y] = "n"
+            print("Hit!")
+        else:
+            board_2[x][y] = "X"
+            print("Miss!")
+            
+        print_boards(board_1, board_2)
+        
+        # computer turn
+        print("\nComputer's turn:")
+        x = randint(0, 7)
+        y = randint(0, 7)
+        if board_1[x][y] == "S":
+            board_1[x][y] = "n"
+            print("Computer hit!")
+        else:
+            board_1[x][y] = "X"
+            print("Computer missed!")
+            print_boards(board_1, board_2)
+        
+        
+        # check if computer won
+        if "S" in board_1:
+            print("Computer won the game!")
+            break
+
+        # check if player 1 won
+        if "S" in board_2:
+            print("Player 1 won the game!")
+            break
+play_game()
