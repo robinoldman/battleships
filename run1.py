@@ -79,7 +79,7 @@ print("\nComputer ships placed on board 2:")
 for i in range(8):
     for j in range(8):
         if board_2[i][j] == "S":
-            board_2[i][j] = "S"
+            board_2[i][j] = "O"
 print_boards(board_1, board_2)
 
 #defines the function "play_game()", which implements battleship. 
@@ -94,7 +94,7 @@ def play_game():
         x = ord(guess[0].upper()) - 65
         y = int(guess[1]) - 1
         if board_2[x][y] == "S":
-            board_2[x][y] = "n"
+            board_2[x][y] = "H"
             print("Hit!")
         else:
             board_2[x][y] = "X"
@@ -107,7 +107,7 @@ def play_game():
         x = randint(0, 7)
         y = randint(0, 7)
         if board_1[x][y] == "S":
-            board_1[x][y] = "n"
+            board_1[x][y] = "H"
             print("Computer hit!")
         else:
             board_1[x][y] = "X"
@@ -116,12 +116,12 @@ def play_game():
         print_boards(board_1, board_2)
         
         # check if computer won
-        if not any("S" in row for row in board_1):
+        if sum([row.count("h") for row in board_1]) == 2:
             print("Computer won the game!")
             break
         
         # check if player 1 won
-        if not any("S" in row for row in board_2):
+        if sum([row.count("h") for row in board_2]) == 2:
             print("Player 1 won the game!")
             break
 
