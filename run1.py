@@ -112,20 +112,21 @@ def play_game():
         else:
             board_1[x][y] = "X"
             print("Computer missed!")
-            print_boards(board_1, board_2)
         
+        print_boards(board_1, board_2)
         
         # check if computer won
-        if "S" not in board_1:
+        if not any("S" in row for row in board_1):
             print("Computer won the game!")
             break
         
-
         # check if player 1 won
-        if "S" not in board_2:
+        if not any("S" in row for row in board_2):
             print("Player 1 won the game!")
             break
-        
 
+
+
+        
 
 play_game()
