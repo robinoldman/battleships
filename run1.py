@@ -6,9 +6,15 @@ import time
 board_1 = []
 board_2 = []
 
+#creates two 8x8 boards, where each grid is initialized with 
+# the value "O" indicating that it is unoccupied.
 for i in range(8):
     board_1.append(["O"] * 8)
     board_2.append(["O"] * 8)
+
+# Creates board by which takes two 2D lists "board_1" and "
+# board_2" as arguments. The code uses a for loop to iterate 
+# over the 8 rows of each board.
 
 def print_boards(board_1, board_2):
     print("Player 1 Board         Player 2 Board")
@@ -18,22 +24,34 @@ def print_boards(board_1, board_2):
         row_2 = " ".join(board_2[i])
         print("%d %s ** %d %s" % (i + 1, row_1, i + 1, row_2))
 
-def add_ship(board, x, y):
-    board[x][y] = "S"
+#sets the value of the grid in the board at the coordinates x,y to "S".
+def add_ship(board_1, x, y):
+    board_1[x][y] = "S"
 
-def place_computer_ships(board):
+# Uses a while loop to run until the count of ships placed 
+# on the board is equal to 8. In each iteration of the loop, the 
+# function generates  x and y coordinates using the "randint" function. 
+# If the grid at the generated coordinates is "O", the code calls the 
+# "add_ship" function and passes the board. The ship count is then 
+# increased by 1.
+def place_computer_ships(board_1):
     ship_count = 0
     while ship_count < 8:
         x = randint(0, 7)
         y = randint(0, 7)
-        if board[x][y] == "O":
-            add_ship(board, x, y)
+        if board_1[x][y] == "O":
+            add_ship(board_1, x, y)
             ship_count += 1
 
 print("Player 1, it's your turn to add ships to your board.")
 print_boards(board_1, board_2)
 
 # ask player 1 to add ships
+# While loop that runs until the number of ships placed on the 
+#board is equal to 8.In each iteration of the loop, code 
+#prompts the user to input the location of their ship. If the 
+# length of the input is not equal to 2, it prints an error message 
+# If the input is valid, the code converts the location to a coordinate
 ship_count = 0
 while ship_count < 8:
     ship_location = input("Enter the location of your ship (e.g. A1): ")
@@ -52,8 +70,21 @@ while ship_count < 8:
 # place computer ships
 place_computer_ships(board_2)
 
-# show player 1 the computer's ships
 
+# show player 1 the computer's ships
+#loops over the 8x8 grid of "board_2" to check if each 
+#grid contains the character "S". If it does, the grid value is set 
+# to "S". calls  "print_boards" and passes the two boards, arguments.
+print("\nComputer ships placed on board 2:")
+for i in range(8):
+    for j in range(8):
+        if board_2[i][j] == "S":
+            board_2[i][j] = "S"
+print_boards(board_1, board_2)
+
+#defines the function "play_game()", which implements battleship. 
+#infinite loop that alternates between the player and computer 
+#until either the player or the computer wins the game.
 
 def play_game():
     while True:
@@ -85,12 +116,16 @@ def play_game():
         
         
         # check if computer won
-        if "S" in board_1:
+        if "S" not in board_1:
             print("Computer won the game!")
             break
+        
 
         # check if player 1 won
-        if "S" in board_2:
+        if "S" not in board_2:
             print("Player 1 won the game!")
             break
+        
+
+
 play_game()
