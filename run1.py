@@ -12,6 +12,8 @@ for i in range(8):
     board_1.append(["O"] * 8)
     board_2.append(["O"] * 8)
 
+ship_locations = []
+
 # Creates board by which takes two 2D lists "board_1" and "
 # board_2" as arguments. The code uses a for loop to iterate 
 # over the 8 rows of each board.
@@ -34,13 +36,13 @@ def add_ship(board_1, x, y):
 # If the grid at the generated coordinates is "O", the code calls the 
 # "add_ship" function and passes the board. The ship count is then 
 # increased by 1.
-def place_computer_ships(board_1):
+def place_computer_ships(board_2, ship_locations):
     ship_count = 0
     while ship_count < 8:
         x = randint(0, 7)
         y = randint(0, 7)
-        if board_1[x][y] == "O":
-            add_ship(board_1, x, y)
+        if board_2[x][y] == "O":
+            ship_locations.append((x, y))
             ship_count += 1
 
 print("Player 1, it's your turn to add ships to your board.")
@@ -53,6 +55,7 @@ print_boards(board_1, board_2)
 # length of the input is not equal to 2, it prints an error message 
 # If the input is valid, the code converts the location to a coordinate
 ship_count = 0
+
 while ship_count < 8:
     ship_location = input("Enter the location of your ship (e.g. A1): ")
     if len(ship_location) != 2:
@@ -68,7 +71,7 @@ while ship_count < 8:
     print_boards(board_1, board_2)
 
 # place computer ships
-place_computer_ships(board_2)
+place_computer_ships(board_2, ship_locations)
 
 
 # show player 1 the computer's ships
@@ -93,11 +96,11 @@ def play_game():
         guess = input("Guess the coordinates of computer's ship (e.g. A1): ")
         x = ord(guess[0].upper()) - 65
         y = int(guess[1]) - 1
-        if board_2[x][y] == "S":
+        if (x, y) in ship_locations:
             board_2[x][y] = "H"
             print("Hit!")
         else:
-            board_2[x][y] = "X"
+            board_2[x][y] = "M"
             print("Miss!")
             
         print_boards(board_1, board_2)
@@ -116,12 +119,12 @@ def play_game():
         print_boards(board_1, board_2)
         
         # check if computer won
-        if sum([row.count("h") for row in board_1]) == 2:
+        if sum([row.count("H") for row in board_1]) == 2:
             print("Computer won the game!")
             break
         
         # check if player 1 won
-        if sum([row.count("h") for row in board_2]) == 2:
+        if sum([row.count("H") for row in board_2]) == 2:
             print("Player 1 won the game!")
             break
 
