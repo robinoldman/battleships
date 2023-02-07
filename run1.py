@@ -54,6 +54,7 @@ print_boards(board_1, board_2)
 #prompts the user to input the location of their ship. If the 
 # length of the input is not equal to 2, it prints an error message 
 # If the input is valid, the code converts the location to a coordinate
+
 ship_count = 0
 
 while ship_count < 8:
@@ -61,8 +62,8 @@ while ship_count < 8:
     if len(ship_location) != 2:
         print("Invalid input. Please enter a valid location (e.g. A1).")
         continue
-    x = ord(ship_location[0].upper()) - 65
-    y = int(ship_location[1]) - 1
+    y = ord(ship_location[0].upper()) - 65
+    x = int(ship_location[1]) - 1
     if x < 0 or x > 7 or y < 0 or y > 7:
         print("Invalid location. Please enter a location within the board (A1 to H8).")
         continue
@@ -94,8 +95,8 @@ def play_game():
         # player 1 turn
         print("\nPlayer 1's turn:")
         guess = input("Guess the coordinates of computer's ship (e.g. A1): ")
-        x = ord(guess[0].upper()) - 65
-        y = int(guess[1]) - 1
+        y = ord(guess[0].upper()) - 65
+        x = int(guess[1]) - 1
         if (x, y) in ship_locations:
             board_2[x][y] = "H"
             print("Hit!")
@@ -124,7 +125,7 @@ def play_game():
             break
         
         # check if player 1 won
-        if sum([row.count("H") for row in board_2]) == 2:
+        if sum([row.count("H") for row in board_2]) == 5:
             print("Player 1 won the game!")
             break
 
