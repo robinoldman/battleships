@@ -62,11 +62,15 @@ while ship_count < 8:
     if len(ship_location) != 2:
         print("Invalid input. Please enter a valid location (e.g. A1).")
         continue
+    if not ship_location[1].isdigit():
+        print("Invalid input. Please enter a letter followed by a number (e.g. A1).")
+        continue
     y = ord(ship_location[0].upper()) - 65
     x = int(ship_location[1]) - 1
     if x < 0 or x > 7 or y < 0 or y > 7:
         print("Invalid location. Please enter a location within the board (A1 to H8).")
         continue
+
     add_ship(board_1, x, y)
     ship_count += 1
     print_boards(board_1, board_2)
@@ -95,8 +99,15 @@ def play_game():
         # player 1 turn
         print("\nPlayer 1's turn:")
         guess = input("Guess the coordinates of computer's ship (e.g. A1): ")
+        if len(guess) != 2:
+            print("Invalid input. Please enter a valid location (e.g. A1).")
+            continue
+        if not guess[1].isdigit():
+            print("Invalid input. Please enter a letter followed by a number (e.g. A1).")
+            continue
         y = ord(guess[0].upper()) - 65
         x = int(guess[1]) - 1
+        
         if (x, y) in ship_locations:
             board_2[x][y] = "H"
             print("Hit!")
