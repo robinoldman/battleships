@@ -12,6 +12,7 @@ while True:
     board_2 = []
     game_is_over = False
 
+
     #creates two 8x8 boards, where each grid is initialized with 
     # the value "O" indicating that it is unoccupied.
     for i in range(8):
@@ -150,7 +151,7 @@ while True:
                 print("Player 1 won the game!")
                 score += 1
                 print (f"your score is: {score}")
-                if score == 5 or input("Do you want to quit the game? (Y/N)").upper() == "Y":
+                if score >= 1 or input("Do you want to play a new game? (Y/N)").upper() == "Y":
                     game_is_over = True
                     break
 
