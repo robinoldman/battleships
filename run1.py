@@ -1,7 +1,7 @@
 from random import randint
 import os
 import time
-
+computer_score = 0
 score = 0
 
 
@@ -143,7 +143,12 @@ while True:
             # check if computer won
             if sum([row.count("H") for row in board_1]) == 5:
                 print("Computer won the game!")
-                break
+                global computer_score 
+                computer_score += 1
+                print (f"your score is: {computer_score}")
+                if computer_score >= 5 or input("Do you want to play a new game? (Y/N)").upper() == "Y":
+                    game_is_over = True
+                    break
             
             # check if player 1 won
             if sum([row.count("H") for row in board_2]) == 1:
