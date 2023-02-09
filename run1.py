@@ -10,7 +10,8 @@ while True:
 
     board_1 = []
     board_2 = []
-    game_is_over = False
+    ship_locations = [] 
+    ship_count = 0
 
 
     #creates two 8x8 boards, where each grid is initialized with 
@@ -19,14 +20,14 @@ while True:
         board_1.append(["O"] * 8)
         board_2.append(["O"] * 8)
 
-    ship_locations = []
+    
 
     # Creates board by which takes two 2D lists "board_1" and "
     # board_2" as arguments. The code uses a for loop to iterate 
     # over the 8 rows of each board.
 
     def print_boards(board_1, board_2):
-        print("Player 1 Board         Player 2 Board")
+        print("Player 1 Board         Computer Board")
         print("  A B C D E F G H      A B C D E F G H")
         for i in range(8):
             row_1 = " ".join(board_1[i])
@@ -62,7 +63,7 @@ while True:
     # length of the input is not equal to 2, it prints an error message 
     # If the input is valid, the code converts the location to a coordinate
 
-    ship_count = 0
+   
 
     while ship_count < 8:
         ship_location = input("Enter the location of your ship (e.g. A1): ")
@@ -138,7 +139,7 @@ while True:
                 board_1[x][y] = "M"
                 print("Computer missed!")
             
-            print_boards(board_1, board_2)
+            print_boards(board_1, board_2)    
             
             # check if computer won
             if sum([row.count("H") for row in board_1]) == 5:
@@ -151,12 +152,7 @@ while True:
                 print("Player 1 won the game!")
                 score += 1
                 print (f"your score is: {score}")
-                if score >= 1 or input("Do you want to play a new game? (Y/N)").upper() == "Y":
-                    game_is_over = True
+                if input("Do you want to play a new game? (Y/N)").upper() == "Y":
                     break
-
-
-
-            
 
     play_game()
