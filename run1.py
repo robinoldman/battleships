@@ -37,7 +37,6 @@ import sys
 score = 0
 
 
-
 """
 clears screen
 """
@@ -55,6 +54,7 @@ intro_string = ("War is upon us! Only the strongest can suvive!\n"
 welcome_string = "Welcome!"
 name = input("What's your name ally? \n")
 
+
 """
 adds slow type to the welcome message
 """
@@ -64,11 +64,10 @@ def slow_type(text, delay=0.1):
         time.sleep(delay)
     print()
 
+
 slow_type(intro_string)
 slow_type(name)
 slow_type(welcome_string)
-
-#pause between new page
 time.sleep(2) 
 
 
@@ -92,9 +91,8 @@ while True:
 
     
     """
-    Creates board by which takes two 2D lists "board_1" and "
-    board_2" as arguments. The code uses a for loop to iterate 
-    over the 8 rows of each board.
+    Creates board which takes two 2D lists "board_1" and "
+    board_2" as arguments.
     """
 
     def print_boards(board_1, board_2):
@@ -166,9 +164,6 @@ while True:
         print_boards(board_1, board_2)
 
 
-    """
-    places computer ships
-    """
     place_computer_ships(board_2, ship_locations)
 
     
@@ -185,6 +180,7 @@ while True:
     print_boards(board_1, board_2)
 
     """
+    Main game
     infinite loop that alternates between the player and computer 
     until either the player or the computer wins the game.
     """
