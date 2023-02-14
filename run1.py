@@ -35,12 +35,7 @@ import time
 import sys
 
 score = 0
-computer_score = 0
-board_1 = []
-board_2 = []
-ship_locations = [] 
-ship_count = 0
-used_coordinates = []  
+
 
 
 """
@@ -53,9 +48,11 @@ def clear_screen():
 custom_art = Figlet(font='rozzo')
 print(custom_art.renderText('Battleship!'))
 
+
+#gives intro to game sets game up for user
 intro_string = ("War is upon us! Only the strongest can suvive!\n"
 "Do you have the skills to defeat your enemy?")
-welcome_string = ", Welcome!"
+welcome_string = "Welcome!"
 name = input("What's your name ally? \n")
 
 """
@@ -71,13 +68,19 @@ slow_type(intro_string)
 slow_type(name)
 slow_type(welcome_string)
 
-    #pause between new page
+#pause between new page
 time.sleep(2) 
 
 
+#main part of game
 while True:
    
-
+    computer_score = 0
+    board_1 = []
+    board_2 = []
+    ship_locations = [] 
+    ship_count = 0
+    used_coordinates = []  
     
     
     # creates two 8x8 boards, where each grid is initialized with 
@@ -102,7 +105,8 @@ while True:
             row_2 = " ".join(board_2[i])
             print("%d %s ** %d %s" % (i + 1, row_1, i + 1, row_2))
 
-    """sets the value of the grid in the board at the coordinates x,y to "S".
+    """
+    sets the value of the grid in the board at the coordinates x,y to "S".
     """
     def add_ship(board_1, x, y):
         board_1[x][y] = "S"
@@ -231,7 +235,7 @@ while True:
             print_boards(board_1, board_2)    
             
             # check if computer won
-            if sum([row.count("H") for row in board_1]) == 1:
+            if sum([row.count("H") for row in board_1]) == 5:
                 print("Computer won the game!\n")
                 global computer_score
                 computer_score += 1
@@ -248,6 +252,7 @@ while True:
                 print("Player 1 won the game!\n")
                 score += 1
                 print(f"your score is: {score}\n")
+            
                 if input("press Y for a new game\n").upper() == "Y":
                     break
                 else:
