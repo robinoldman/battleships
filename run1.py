@@ -29,21 +29,56 @@ Python program organisation for improved readability:
 """
 
 from random import randint
+from pyfiglet import Figlet
 import os
 import time
 import sys
 
 score = 0
 computer_score = 0
+board_1 = []
+board_2 = []
+ship_locations = [] 
+ship_count = 0
+used_coordinates = []  
+
+
+"""
+clears screen
+"""
+def clear_screen():
+    os.system('clear' if os.name == 'posix' else 'cls')
+
+#add art graphics to the welcome screen 
+custom_art = Figlet(font='rozzo')
+print(custom_art.renderText('Battleship!'))
+
+intro_string = ("War is upon us! Only the strongest can suvive!\n"
+"Do you have the skills to defeat your enemy?")
+welcome_string = ", Welcome!"
+name = input("What's your name ally? \n")
+
+"""
+adds slow type to the welcome message
+"""
+def slow_type(text, delay=0.1):
+    for char in text:
+        print(char, end='', flush=True)
+        time.sleep(delay)
+    print()
+
+slow_type(intro_string)
+slow_type(name)
+slow_type(welcome_string)
+
+    #pause between new page
+time.sleep(2) 
+
 
 while True:
    
 
-    board_1 = []
-    board_2 = []
-    ship_locations = [] 
-    ship_count = 0
-    used_coordinates = []
+    
     
     # creates two 8x8 boards, where each grid is initialized with 
     # the value "O" indicating that it is unoccupied.
@@ -221,4 +256,3 @@ while True:
 
     play_game()
 
-    
