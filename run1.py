@@ -62,7 +62,7 @@ while True:
             row_2 = " ".join(board_2[i])
             print("%d %s ** %d %s" % (i + 1, row_1, i + 1, row_2))
 
-    """#sets the value of the grid in the board at the coordinates x,y to "S".
+    """sets the value of the grid in the board at the coordinates x,y to "S".
     """
     def add_ship(board_1, x, y):
         board_1[x][y] = "S"
@@ -123,15 +123,15 @@ while True:
 
 
     """
-    # place computer ships
+    places computer ships
     """
     place_computer_ships(board_2, ship_locations)
 
     """
-    # show player 1 the computer's ships
-    #loops over the 8x8 grid of "board_2" to check if each 
-    #grid contains the character "S". If it does, the grid value is set 
-    # to "S". calls  "print_boards" and passes the two boards, arguments.
+    show player 1 the computer's ships
+    loops over the 8x8 grid of "board_2" to check if each 
+    grid contains the character "S". If it does, the grid value is set 
+    to "S". calls  "print_boards" and passes the two boards, arguments.
     """
     print("\nComputer ships placed on board 2:")
     for i in range(8):
@@ -140,9 +140,8 @@ while True:
                 board_2[i][j] = "O"
     print_boards(board_1, board_2)
     """
-    #defines the function "play_game()", which implements battleship. 
-    #infinite loop that alternates between the player and computer 
-    #until either the player or the computer wins the game.
+    infinite loop that alternates between the player and computer 
+    until either the player or the computer wins the game.
     """
     def play_game():
         while True:

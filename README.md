@@ -85,38 +85,51 @@ Here is the flowchart.
 
 The primary functions and methods I used are:
 
-    clear()
-        Clears the screen when necessary to create space for new printouts.
-    convert_letters_to_numbers()
-        Retrieves the corresponding number to the letter the user will input.
-    print_board(self)
-        Prints an eight by eight user board grid.
-    create_ships(self)
-        Creates the five computer's hidden battleships in random positions in the board.
-    get_user_input(self)
-        Requests and returns the user's inputs for row and column, it also handles errors when user input not in range.
-    intro_to_game(self)
-        Requests and returns the user's input to select whether they want to read the rules and start the game or simply start the game, it also handles errors when user input not in range.
-    count_destroyed_ships(self)
-        Counts how many of the computer's hidden battleships have been hit by the user.
-    print_intro()
-        Prints the welcome message to the user and offers them the options from intro_to game method.
-    print_rules()
-        Prints the game rules should the user chooses to do so.
-    play_again_option()
-        Asks the user once they've finished the game whether they want to play again or end the program.
-    run_game()
-        Executes the main logic of the game.
+    def clear_screen():
+        clears screen
 
+    def print_boards(board_1, board_2):
+        creates 2 boards to play on 
+
+    def add_ship(board_1, x, y):
+        sets the value of the grid in the board at the coordinates x,y to "S"
+    
+    def place_computer_ships(board_2, ship_locations):
+        Uses a while loop to run until the count of ships placed on the board is equal to 8.
+    
+    print_boards(board_1, board_2)
+        prints 2 playing boards
+    
+    def play_game():
+        infinite loop that alternates between the player and computer 
+        until either the player or the computer wins the game.
+
+     
 Imports
 
-I've used the following Python packages and/or external imported packages.
+I've used the following Python imported packages.
 
     os: used for adding a clear() function.
     random: used to get a random choice from a list.
 
 Testing
-look at testing in the TESTING.md file.
+
+| issue                                                                                                                                            	| pass 	|
+|--------------------------------------------------------------------------------------------------------------------------------------------------	|------	|
+| Call the clear_screen function and verify that it clears the terminal screen.                                                                    	| yes  	|
+| Call the print_boards function with the two boards as arguments and  verify that it prints the two boards in the correct format with values of O 	| yes  	|
+| do player 1's ships change to 's' when seleced?                                                                                                  	| yes  	|
+| does the computer recognise where the hidden ships in the computer board are?                                                                    	| yes  	|
+| does the board change with a H and and a M when ships have been missed and hit?                                                                  	| yes  	|
+| verify that place_comoputer_ships places exactly 8 ships on the board                                                                            	| yes  	|
+| can user add ships? are they 's'                                                                                                                 	| yes  	|
+| error message for wrong input                                                                                                                    	| yes  	|
+| error message for input out of range                                                                                                             	| yes  	|
+| error message for input already selected                                                                                                         	| yes  	|
+| does hit message come up for hit and miss for miss?                                                                                              	| yes  	|
+| does the score update when a ship has been hit?                                                                                                  	| yes  	|
+| winning messagee ends game when n pressed                                                                                                        	| yes  	|
+| winning messgae for win loops back to start when y is pressed                                                                                    	| yes  	|
 
 The live deployed application can be found deployed on Heroku.
 
