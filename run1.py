@@ -29,7 +29,7 @@ import os
 import time
 
 score = 0
-
+computer_score = 0
 
 while True:
    
@@ -186,17 +186,20 @@ while True:
             print_boards(board_1, board_2)    
             
             # check if computer won
-            if sum([row.count("H") for row in board_1]) == 5:
+            if sum([row.count("H") for row in board_1]) == 1:
                 print("Computer won the game!\n")
+                global computer_score
+                computer_score += 1
+                print(f"computer score is: {computer_score }\n")
                 break
             
             # check if player 1 won
-            if sum([row.count("H") for row in board_2]) == 1:
+            if sum([row.count("H") for row in board_2]) == 5:
                 global score 
                 print("Player 1 won the game!\n")
                 score += 1
                 print (f"your score is: {score}\n")
-                if input("Do you want to play a new game? (Y/N)\n").upper() == "Y":
+                if input("press Y if you want to start a new game\n").upper() == "Y":
                     break
 
     play_game()
