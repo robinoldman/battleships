@@ -114,22 +114,21 @@ I've used the following Python imported packages.
 
 Testing
 
-| issue                                                                                                                                            	| pass 	|
-|--------------------------------------------------------------------------------------------------------------------------------------------------	|------	|
-| Call the clear_screen function and verify that it clears the terminal screen.                                                                    	| yes  	|
-| Call the print_boards function with the two boards as arguments and  verify that it prints the two boards in the correct format with values of O 	| yes  	|
-| do player 1's ships change to 's' when seleced?                                                                                                  	| yes  	|
-| does the computer recognise where the hidden ships in the computer board are?                                                                    	| yes  	|
-| does the board change with a H and and a M when ships have been missed and hit?                                                                  	| yes  	|
-| verify that place_comoputer_ships places exactly 8 ships on the board                                                                            	| yes  	|
-| can user add ships? are they 's'                                                                                                                 	| yes  	|
-| error message for wrong input                                                                                                                    	| yes  	|
-| error message for input out of range                                                                                                             	| yes  	|
-| error message for input already selected                                                                                                         	| yes  	|
-| does hit message come up for hit and miss for miss?                                                                                              	| yes  	|
-| does the score update when a ship has been hit?                                                                                                  	| yes  	|
-| winning messagee ends game when n pressed                                                                                                        	| yes  	|
-| winning messgae for win loops back to start when y is pressed                                                                                    	| yes  	|
+| test description              	| issue                                                                                                                                            	| pass 	|
+|-------------------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------	|------	|
+| clear screen                  	| Call the clear_screen function and verify that it clears the terminal screen.                                                                    	| yes  	|
+| board view                    	| Call the print_boards function with the two boards as arguments and  verify that it prints the two boards in the correct format with values of O 	| yes  	|
+| ship selection                	| player 1's ships change to 's' when seleced                                                                                                      	| yes  	|
+| ship recognition              	| computer recognises where the hidden ships in the computer board are                                                                             	| yes  	|
+| board change for hit and miss 	| the board changes with a H and and a M when ships have been missed and hit                                                                       	| yes  	|
+| ships placed on board         	| computer places 8 ships on the board                                                                                                             	| yes  	|
+| wrong input                   	| error message for wrong input                                                                                                                    	| yes  	|
+| wrong range                   	| error message for input out of range                                                                                                             	| yes  	|
+| repetition of coordinates     	| error message for input already selected                                                                                                         	| yes  	|
+| feedback for hit and miss     	| message come up for hit and miss                                                                                                                 	| yes  	|
+| score update                  	| the score updates when a game has been won by the computer or player                                                                             	| yes  	|
+| end game                      	| after game won player presses any button and whole game ends                                                                                     	| yes  	|
+| loop back for new game        	| winning messgae for win loops back to start when y is pressed                                                                                    	| yes  	|
 
 The live deployed application can be found deployed on Heroku.
 
