@@ -1,7 +1,8 @@
 """
 1. Show intro message
 
-2. Create two 8x8 boards, where each grid is initialized with the value "O" indicating that it is unoccupied.
+2. Create two 8x8 boards, where each grid is initialized with the value 
+"O" indicating that it is unoccupied.
 
 3. Ask player 1 to add ships to their board
 
@@ -10,7 +11,8 @@
 5. Run the game, turn by turn until criteria for game over are met
     Criteria for game over:
 
-6. After game is over, ask player if they want to play again. If so, run the game again. If not, exit the program.
+6. After game is over, ask player if they want to play again. If so, 
+run the game again. If not, exit the program.
 
 
 Python program organisation for improved readability:
@@ -18,8 +20,10 @@ Python program organisation for improved readability:
 - import statements
 - global constants and variables in that order
 - function denfinitions 
-    - The main function should be the last function defined, and should be the entry point into the program
-    ** - Would avoid having any naked code (code not inside a function). Move it into main.
+    - The main function should be the last function defined, and should 
+    be the entry point into the program
+    ** - Would avoid having any naked code (code not inside a function). 
+    Move it into main.
 - main function call
     
 """
@@ -39,9 +43,9 @@ while True:
     board_2 = []
     ship_locations = [] 
     ship_count = 0
-
+    used_coordinates = []
     
-    #creates two 8x8 boards, where each grid is initialized with 
+    # creates two 8x8 boards, where each grid is initialized with 
     # the value "O" indicating that it is unoccupied.
     
     for i in range(8):
@@ -56,7 +60,7 @@ while True:
     """
 
     def print_boards(board_1, board_2):
-        print("\nPlayer 1 Board         Computer Board")
+        print("\n \nPlayer 1 Board         Computer Board")
         print("  A B C D E F G H      A B C D E F G H")
         for i in range(8):
             row_1 = " ".join(board_1[i])
@@ -86,35 +90,35 @@ while True:
 
     print("Player 1, it's your turn to add ships to your board.")
     print_boards(board_1, board_2)
+
     """
     # ask player 1 to add ships
     # While loop that runs until the number of ships placed on the 
-    #board is equal to 8.In each iteration of the loop, code 
-    #prompts the user to input the location of their ship. If the 
+    # board is equal to 8.In each iteration of the loop, code 
+    # prompts the user to input the location of their ship. If the 
     # length of the input is not equal to 2, it prints an error message 
     # If the input is valid, the code converts the location to a coordinate
     """
-   
-
-    used_coordinates = []
-
     while ship_count < 8:
         ship_location = input("\nEnter the location of your ship (e.g. A1):")
         if len(ship_location) != 2:
             print("Invalid input. Please enter a valid location (e.g. A1).")
             continue
         if not ship_location[1].isdigit():
-            print("Invalid input. Please enter a letter followed by a number (e.g. A1).\n")
+            print("Invalid input. Please enter a letter followed", end=" ")
+            print("by a number (e.g. A1).\n")
             continue
         y = ord(ship_location[0].upper()) - 65
         x = int(ship_location[1]) - 1
         if x < 0 or x > 7 or y < 0 or y > 7:
-            print("Invalid location. Please enter a location within the board (A1 to H8).\n")
+            print("Invalid location. Please enter a location.", end=" ") 
+            print("within the board (A1 to H8).\n")
             continue
 
         coord = (x, y)
         if coord in used_coordinates:
-            print("You have already used that coordinate. Please enter a different coordinate.\n")
+            print("You have already used that coordinate.", end=" ")
+            print("Please enter a different coordinate.\n")
             continue
 
         used_coordinates.append(coord)
@@ -129,9 +133,10 @@ while True:
     place_computer_ships(board_2, ship_locations)
 
     
-    #show player 1 the computer's ships loops over the 8x8 grid of "board_2" to check if each 
-    #grid contains the character "S". If it does, the grid value is set to "S". calls  
-    #"print_boards" and passes the two boards, arguments.
+    # show player 1 the computer's ships loops over the 8x8 grid of 
+    # "board_2" to check if each grid contains the character "S". If 
+    # it does, the grid value is set to "S". calls "print_boards"
+    # and passes the two boards, arguments.
     
     print("\nComputer ships placed on board 2:\n")
     for i in range(8):
@@ -148,21 +153,25 @@ while True:
         while True:
             # player 1 turn
             print("\nPlayer 1's turn:\n")
-            guess = input("Guess the coordinates of computer's ship (e.g. A1):\n")
+            guess = input("Guess the coordinates of the ship (e.g. A1):\n")
             if len(guess) != 2:
-                print("Invalid input. Please enter a valid location (e.g. A1).\n")
+                print("Invalid input. Please enter a valid", end=" ")
+                print("location (e.g. A1).\n")
                 continue
             if not guess[1].isdigit():
-                print("Invalid input. Please enter a letter followed by a number (e.g. A1).\n")
+                print("Invalid input. Please enter a letter followed", end=" ") 
+                print("by a number (e.g. A1).\n")
                 continue
             y = ord(guess[0].upper()) - 65
             x = int(guess[1]) - 1
             if x < 0 or x > 7 or y < 0 or y > 7:
-                print("Invalid location. Please enter a location within the board (A1 to H8).\n")
+                print("Invalid location. Please enter a location ", end=" ")
+                print("within the board (A1 to H8).\n")
                 continue
             if board_2[x][y] != "O":
-               print("You have already tried this location. Please enter a new location.\n")
-               continue
+                print("You have already tried this location. ", end=" ")
+                print("Please enter a new location.\n")
+                continue
 
             if (x, y) in ship_locations:
                 board_2[x][y] = "H"
@@ -192,19 +201,19 @@ while True:
                 global computer_score
                 computer_score += 1
                 print(f"computer score is: {computer_score }\n")
-                if input("press Y if you want to start a new game\n").upper() == "Y":
+                if input("press Y for a new game\n").upper() == "Y":
                     break
                 else:
                     print("You have left the game.")
-                    sys.exit()
+                    sys.exit() 
             
             # check if player 1 won
             if sum([row.count("H") for row in board_2]) == 1:
                 global score 
                 print("Player 1 won the game!\n")
                 score += 1
-                print (f"your score is: {score}\n")
-                if input("press Y if you want to start a new game\n").upper() == "Y":
+                print(f"your score is: {score}\n")
+                if input("press Y for a new game\n").upper() == "Y":
                     break
                 else:
                     print("You have left the game.")
