@@ -1,7 +1,7 @@
-Battleship Game - ReadMe
+BattleshipsGame - ReadMe
 Introduction
 
-This code is a simple implementation of the game Battleship. The code creates two 8x8 boards and allows player 1 to add ships to their board. The computer then randomly places ships on its board. The game is then played turn by turn until the criteria for game over are met. After the game is over, the player is asked if they want to play again. If yes, the game runs again, otherwise, the program exits.
+This code is a simple implementation of the game Battleships. The code creates two 8x8 boards and allows player 1 to add ships to their board. The computer then randomly places ships on its board. The game is then played turn by turn until the criteria for game over are met. After the game is over, the player is asked if they want to play again. If yes, the game runs again, otherwise, the program exits.
 
 Program Organisation
 
@@ -17,11 +17,7 @@ The program is organized in the following manner to improve readability:
 Code Execution
 
 The code creates two 8x8 boards and initializes each grid with the value "O" indicating that it is unoccupied. Player 1 is asked to add ships to their board and the computer places ships on its board. The game then runs turn by turn until the criteria for game over are met. After the game is over, the player is asked if they want to play again. If yes, the game runs again, otherwise, the program exits.
-Conclusion
 
-
-Am I Responsive
-UX
 Flowchart
 
 I initially created a flowchart with the basic steps that the program needed to take for it to function. 
@@ -44,18 +40,19 @@ User Input Request
 
     
         This message shows that a co ordinate has already been chosen
-
+![cordinate already selected](./images/already_input.png)
 
         this message shownc that a co ordinate is out of range
-
+![invalid range](./images/invalid_locationa9.png)
         this message shows that a co ordinate is not a valid character
-
+![invalid character](./images/invalid_inputaa.png)
 
 Missile Count/Hit or Miss Message
 
     Win or Lose Message and Option to End Program or Play Again
         once a game has been won or lost the player is able to choose if they would like to play another game or quit. at which point they are able to exit.
 
+![won game](./images/won_game.png)
 
 
 There is something I would change if I had more time.
@@ -83,37 +80,10 @@ I used a flowchart to create the app's logic, and mapped out before coding began
 
 Here is the flowchart.
 
+![flowchart](./images/flow.png)
 
 
-class GameBoard:
-    """
-    Create an object of an entity board. This class
-    will create 2 objects, the user's board and the computer's
-    board. It also has methods that will allow to print the user's board
-    while keeping the computer's hidden and return the column value to the
-    user's input key by using the letters_to_numbers dictionary.
-    """
-
-    def __init__(self, board):
-        self.board = board
-
-class Battleship:
-    """
-    Create battleship objects in a board entity. This class
-    will create 5 battleships. Via its methods it will add them
-    to the hidden computer's board,
-    it will get and return the user's inputs for row and column,
-    it will handle any user input errors, return the user input
-    and count the hit battleships.
-    it will also handle the game intro (welcoming), giving the
-    user the option to print (see/read) the rules or to start
-    the game right away.
-    """
-
-    def __init__(self, board):
-        self.board = board
-
-The primary functions and methods used on this application are:
+The primary functions and methods I used are:
 
     clear()
         Clears the screen when necessary to create space for new printouts.
@@ -172,7 +142,7 @@ Heroku needs two additional files in order to deploy properly.
 
 You can install this project's requirements (where applicable) using:
 
-    pip3 install -r requirements.txt Please note that requirements file was left blank for this program since no additional requirements were needed.
+    pip3 install -r requirements.txt 
 
 If you have your own packages that have been installed, then the requirements file needs updated using:
 
@@ -221,6 +191,6 @@ Credits
 
 Acknowledgements
 
-    I would like to thank my Code Institute mentor, Tim Nelson for his fantastic support throughout the development of this project, for going the extra mile to be as approachable and understanding as humanly possible.
+    I would like to thank my Code Institute mentor,  for his fantastic support throughout the development of this project, for going the extra mile to be as approachable and understanding as humanly possible.
     I would like to thank the Code Institute Slack community for the moral support; as well as my fellow students for the constant feedback and support.
     I would like to thank my wife Amanda, for believing in me, and supporting me unconditionally.
