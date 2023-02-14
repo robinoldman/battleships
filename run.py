@@ -21,7 +21,7 @@ for char in intro_string:
 
     #user enters name
     
-name = input("What's your name ally? ")
+name = input("What's your name ally? \n")
 
 for char in name:
     print(char, end="", flush=True)

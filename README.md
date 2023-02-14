@@ -189,18 +189,15 @@ You can clone the repository by following these steps:
 
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
-Forking
+FORKING
 
-By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
+Forking the GitHub Repository
 
-    Log in to GitHub and locate the GitHub Repository
-    At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
-    Once clicked, you should now have a copy of the original repository in your own GitHub account!
+By forking the GitHub Repository, you can make a copy of the original repository in your own GitHub account. This means we can view or make changes without making the changes affecting the original.
 
-Local VS Deployment
+Log into GitHub and locate the GitHub Repository. At the top of the Repository there is a "Fork" button about the "Settings" button on the menu. You should now have a new copy of the original repository in your own GitHub account.
 
-The local program performance is optimal as well as the deployed version, the only significant difference as stated in the TESTING.md file more specifically in the Unfixed Bugs section is that in the local version the screen clears completetly after the clear() function is called whereas in the deployed version when you scroll up, a "residue" from the "Rules" print out can be seen.
-Credits
+
 
 Acknowledgements
 
