@@ -27,6 +27,7 @@ Python program organisation for improved readability:
 from random import randint
 import os
 import time
+import sys
 
 score = 0
 computer_score = 0
@@ -191,15 +192,22 @@ while True:
                 global computer_score
                 computer_score += 1
                 print(f"computer score is: {computer_score }\n")
-                break
+                if input("press Y if you want to start a new game\n").upper() == "Y":
+                    break
+                else:
+                    print("You have left the game.")
+                    sys.exit()
             
             # check if player 1 won
-            if sum([row.count("H") for row in board_2]) == 5:
+            if sum([row.count("H") for row in board_2]) == 1:
                 global score 
                 print("Player 1 won the game!\n")
                 score += 1
                 print (f"your score is: {score}\n")
                 if input("press Y if you want to start a new game\n").upper() == "Y":
                     break
+                else:
+                    print("You have left the game.")
+                    sys.exit()
 
     play_game()
