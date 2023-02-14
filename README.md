@@ -148,10 +148,39 @@ Deployment steps are as follows, after account setup:
 
 Deployment
 
-Heroku needs two additional files in order to deploy properly.
+How to set up HEROKU 
 
-    requirements.txt
-    Procfile
+Install the Heroku CLI: The Heroku Command Line Interface (CLI) allows you to manage your Heroku apps from the terminal. You can download the CLI from the Heroku website.
+
+Create a new app: Use the Heroku CLI to create a new app in your account. This can be done with the following command: heroku create. This will create a new app and add a git remote to your local repository.
+
+Prepare your app for deployment: You will need to make sure your application is ready for deployment to Heroku. This may include things like configuring your database, setting up environment variables, and making sure your application is listening on the correct port.
+
+Deploy your app: Once your app is ready for deployment, you can push your code to Heroku using git. You can do this with the following command: git push heroku main (assuming you're pushing from the main branch).
+
+
+
+
+To commit and push code from a local filesystem to Github and Heroku, you can follow these steps:
+
+Create a local Git repository: Initialize a Git repository in your local project directory using the git init command.
+
+Create a remote repository: Create a new repository on Github and connect it to your local repository using the git remote add origin command. This sets up a connection between your local repository and your Github repository.
+
+Add and commit your code: Use the git add command to stage your changes and then use the git commit command to commit your changes to the local repository.
+
+Push changes to Github: Use the git push command to push your local changes to the Github remote repository.
+
+Connect Github to Heroku: Connect your Github repository to your Heroku application using the Heroku Dashboard or the Heroku CLI. This can be done by specifying the Github repository and branch to deploy.
+
+Deploy your application: Once the connection is established, you can deploy your application to Heroku by either manually triggering a deploy or by configuring Heroku to automatically deploy new changes.
+
+Heroku uses a Continuous Deployment (CD) process to automatically pick up changes from a connected Github repository. This CD process can be configured to automatically deploy changes to a Heroku application when new code is pushed to a specified branch on the Github repository. When a new push is made to the specified branch, Heroku automatically pulls the changes, builds and deploys the application to the specified Heroku environment.
+
+In summary, by setting up a remote repository on Github, connecting it to your Heroku application, and configuring a Continuous Deployment (CD) process, you can automate the process of deploying your code changes to Heroku.
+
+
+
 
 You can install this project's requirements (where applicable) using:
 
@@ -165,15 +194,17 @@ The Procfile can be created with the following command:
 
     echo web: node index.js > Procfile
 
+
+
 Local Deployment
 
-This project can be cloned or forked in order to make a local copy on your own system.
+You can clone or fork this project in order to make a local copy on your own system.
 
-For either method, you will need to install any applicable packages found within the requirements.txt file.
+Install any applicable packages found within the requirements.txt file.
 
     pip3 install -r requirements.txt.
 
-If using any confidential credentials, such as CREDS.json or env.py data, these will need to be manually added to your own newly created project as well.
+
 Cloning
 
 You can clone the repository by following these steps:
@@ -184,10 +215,10 @@ You can clone the repository by following these steps:
     Open Git Bash or Terminal
     Change the current working directory to the one where you want the cloned directory
     In your IDE Terminal, type the following command to clone my repository:
-        git clone https://github.com/leonardo-simeone/command-line-python-battleship-game.git
+        git clone https://github.com/robinoldman/battleships
     Press Enter to create your local clone.
 
-Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
 
 FORKING
 
@@ -199,8 +230,9 @@ Log into GitHub and locate the GitHub Repository. At the top of the Repository t
 
 
 
-Acknowledgements
+ACKNOWLEDGMENTS
 
-    I would like to thank my Code Institute mentor,  for his fantastic support throughout the development of this project, for going the extra mile to be as approachable and understanding as humanly possible.
-    I would like to thank the Code Institute Slack community for the moral support; as well as my fellow students for the constant feedback and support.
-    I would like to thank my wife Amanda, for believing in me, and supporting me unconditionally.
+My mentor Brian Macharia helped me through many issues and hurdles along the way with expert advice on my CSS and HTML. My Brother Patrick Oldman also supported me and recommended tutorials to watch online to help with any issues.
+Disclaimer
+
+The content of this Website is for educational purposes only.
