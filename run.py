@@ -165,7 +165,7 @@ print(custom_art.renderText('Battleship!'))
 intro_string = ("War is upon us! Only the strongest can suvive!\n"
 "Do you have the skills to defeat your enemy?\n"
 "1. Place your 8 ships in 8 cordinate places\n" 
-"2. Guess where the computer has placed it's ships by typing a co-rdinate\n"
+"2. Guess where the computer has placed it's ships by typing a co-ordinate\n"
 "3. For a hit = 'H' for a miss = 'M'\n"
 "4. If the computer sinks all 8 of your ships first you loose\n"
 "5. If you sink the all 8 of computer's ships you win! \n"

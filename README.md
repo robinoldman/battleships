@@ -138,6 +138,14 @@ I did fix bugs here such as lines to long and blank spaces.
 | end game                      	| after game won player presses any button and whole game ends                                                                                     	| yes  	|
 | loop back for new game        	| winning messgae for win loops back to start when y is pressed                                                                                    	| yes  	|
 
+
+## Bug fixing
+
+1. When i built the boards the cordinates were the wrong way round (e.g when I typed in 'A2' the cordinates for 'b1' would appear. ) I swapped the x for the y in my code to fix this.
+2. The spacing between my instructions and board did not exhist. I changed this by ading new lines \n
+3. I initailly marked the computer ships as 's' and looped the code to tell me when the 's' had gone to see if they had won. I then realised the player should not see the computers ships. I hid the ships in a list and looped the code to find 7 'h' for hit to see if the computer had won.
+
+
 The live deployed application can be found deployed on Heroku.
 
 
