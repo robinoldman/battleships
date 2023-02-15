@@ -110,9 +110,17 @@ I've used the following Python imported packages.
 
 ## Testing
 
-PEP8 online - PEP8 Online was used in conjunction with a code linter and formatter in my IDE to ensure the PEP 8 style guidelines were adhered to.
+### Browsers Compatibility
 
+I tested compatibility with Chrome, Edge and Firefox. The program works and responds well. 
+
+
+### Python
+
+I used CI Python Linter to validate all of my Python files.
 No problems were present in my final Python code.
+I did fix bugs here such as lines to long and blank spaces. 
+
 
 | test description              	| issue                                                                                                                                            	| pass 	|
 |-------------------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------	|------	|
