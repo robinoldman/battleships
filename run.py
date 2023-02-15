@@ -13,18 +13,6 @@
 
 6. After game is over, ask player if they want to play again. If so, 
 run the game again. If not, exit the program.
-
-
-Python program organisation for improved readability:
-
-- import statements
-- global constants and variables in that order
-- function denfinitions 
-    - The main function should be the last function defined, and should 
-    be the entry point into the program
-    ** - Would avoid having any naked code (code not inside a function). 
-    Move it into main.
-- main function call
     
 """
 
@@ -146,7 +134,7 @@ def play_game():
             global computer_score
             computer_score += 1
             print(f"computer score is: {computer_score }\n")
-            if input("press Y for a new game\n").upper() == "Y":
+            if input("key Y = new game. Other keys = quit\n").upper() == "Y":
                 break
             else:
                 print("You have left the game.")
@@ -159,7 +147,7 @@ def play_game():
             score += 1
             print(f"your score is: {score}\n")
         
-            if input("press Y for a new game\n").upper() == "Y":
+            if input("key Y = new game. Other keys = quit\n").upper() == "Y":
                 break
             else:
                 print("You have left the game.")
@@ -169,8 +157,14 @@ print(custom_art.renderText('Battleship!'))
 
 #gives intro to game sets game up for user
 intro_string = ("War is upon us! Only the strongest can suvive!\n"
-"Do you have the skills to defeat your enemy?")
-welcome_string = "Welcome!"
+"Do you have the skills to defeat your enemy?\n"
+"1. Place your 8 ships in 8 cordinate places\n" 
+"2. Guess where the computer has placed it's ships by typing a co-rdinate\n"
+"3. For a hit = 'H' for a miss = 'M'\n"
+"4. If the computer sinks all 8 of your ships first you loose\n"
+"5. If you sink the all 8 of computer's ships you win! \n"
+"6. To play again press 'Y' to quit the game press any other button\n")
+welcome_string = "Welcome and good luck!"
 name = input("What's your name ally? \n")
 
 slow_type(intro_string)
