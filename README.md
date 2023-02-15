@@ -21,7 +21,7 @@ I initially created a flowchart with the basic steps that the program needed to 
 Welcome Screen
         In this feature the user is greeted and welcomed to the game, they are prompted to enter their name and start the gmae. I used slow type to add dramtic effect to ther experience. The player is then told the rules of the game.
 
-![intro](./images/flow.png)
+![intro](./images/intro.png)
 
 Gameboard
         The gameboard shows both the computer and the player's boards.  It will display M's for misses and a S for ships and H's for a hit.
