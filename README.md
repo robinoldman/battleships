@@ -15,11 +15,13 @@ The code creates two 8x8 boards and initializes each grid with the value "O" ind
 
 I initially created a flowchart with the basic steps that the program needed to take for it to function. 
 
+
 ![flow chart](./images/flow.png)
 
 
 ## Welcome Screen
         In this feature the user is greeted and welcomed to the game, they are prompted to enter their name and start the gmae. I used slow type to add dramtic effect to ther experience. The player is then told the rules of the game.
+
 
 ![intro](./images/intro.png)
 
@@ -33,12 +35,15 @@ The user input request occurs once the welcome screen has appeared. Here the pro
 ## User Input Request
    
 This message shows that a co ordinate has already been chosen
+
 ![cordinate already selected](./images/already_input.png)
 
 This message shows that a co ordinate is out of range
+
 ![invalid range](./images/invalid_locationa9.png)
 
 This message shows that a co ordinate is not a valid character
+
 ![invalid character](./images/invalid_inputaa.png)
 
 ## Missile Count/Hit or Miss Message
@@ -50,7 +55,7 @@ Once a game has been won or lost the player is able to choose if they would like
 ![won game](./images/won_game.png)
 
 
-## Is something I would change if I had more time?
+## Is there something I would change if I had more time?
 
 Emojis for the ships and missed shot.
 This would give a better user experince and make the game more attractive to play
@@ -139,42 +144,12 @@ The live deployed application can be found deployed on Heroku.
     Finally once Heroku finishes building the App, click on Open App to see the App deployed.
 
 
-## How to set up HEROKU 
-
-Install the Heroku CLI: The Heroku Command Line Interface (CLI) allows you to manage your Heroku apps from the terminal. You can download the CLI from the Heroku website.
-
-Create a new app: Use the Heroku CLI to create a new app in your account. This can be done with the following command: heroku create. This will create a new app and add a git remote to your local repository.
-
-Prepare your app for deployment: You will need to make sure your application is ready for deployment to Heroku. This may include things like configuring your database, setting up environment variables, and making sure your application is listening on the correct port.
-
-Deploy your app: Once your app is ready for deployment, you can push your code to Heroku using git. You can do this with the following command: git push heroku main (assuming you're pushing from the main branch).
-
-
-
-To commit and push code from a local filesystem to Github and Heroku, you can follow these steps:
-
-Create a local Git repository: Initialize a Git repository in your local project directory using the git init command.
-
-Create a remote repository: Create a new repository on Github and connect it to your local repository using the git remote add origin command. This sets up a connection between your local repository and your Github repository.
-
-Add and commit your code: Use the git add command to stage your changes and then use the git commit command to commit your changes to the local repository.
-
-Push changes to Github: Use the git push command to push your local changes to the Github remote repository.
-
-Connect Github to Heroku: Connect your Github repository to your Heroku application using the Heroku Dashboard or the Heroku CLI. This can be done by specifying the Github repository and branch to deploy.
-
-Deploy your application: Once the connection is established, you can deploy your application to Heroku by either manually triggering a deploy or by configuring Heroku to automatically deploy new changes.
-
-Heroku uses a Continuous Deployment (CD) process to automatically pick up changes from a connected Github repository. This CD process can be configured to automatically deploy changes to a Heroku application when new code is pushed to a specified branch on the Github repository. When a new push is made to the specified branch, Heroku automatically pulls the changes, builds and deploys the application to the specified Heroku environment.
-
-
-
 Heroku needs two additional files in order to deploy.
 
     requirements.txt
     Procfile
 
-Yinstall this project's requirements using:
+Install this project's requirements using:
 
     pip3 install -r requirements.txt 
 
@@ -185,8 +160,6 @@ If you have your own packages, then the requirements file needs updated using:
 Procfile can be created using the following command:
 
     echo web: node index.js > Procfile
-
-
 
 
 ## Local Deployment
@@ -221,6 +194,23 @@ By forking the GitHub Repository, you can make a copy of the original repository
 
 Log into GitHub and locate the GitHub Repository. At the top of the Repository there is a "Fork" button about the "Settings" button on the menu. You should now have a new copy of the original repository in your own GitHub account.
 
+
+##Credits
+
+
+Type Slowly
+
+1. I used the below code to help me understand how to type slowly
+
+https://stackoverflow.com/a/10390877
+
+
+2. I used the below code to pause the screen between welcome and game.
+
+https://www.programiz.com/python-programming/time/sleep
+
+3. Code Institute Sample README
+Elements of the README were copied and adapted from the Code Institute sample readme.
 
 
 ## ACKNOWLEDGMENTS
