@@ -6,16 +6,6 @@ Introduction
 
 This code is a simple implementation of the game Battleships. The code creates two 8x8 boards and allows player 1 to add ships to their board. The computer then randomly places ships on its board. The game is then played turn by turn until the criteria for game over are met. After the game is over, the player is asked if they want to play again. If yes, the game runs again, otherwise, the program exits.
 
-Program Organisation
-
-The program is organized in the following manner to improve readability:
-
-    Import statements
-    Global constants and variables in that order
-    Function definitions
-        The main function should be the last function defined, and should be the entry point into the program
-        To avoid having any naked code (code not inside a function), it should be moved into the main function.
-    Main function call
 
 Code Execution
 
