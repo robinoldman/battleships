@@ -103,6 +103,14 @@ I've used the following Python imported packages.
 
 Testing
 
+Testing
+W3C Markup Validators
+
+
+PEP8 online - PEP8 Online was used in conjunction with a code linter and formatter in my IDE to ensure the PEP 8 style guidelines were adhered to.
+
+No problems were present in my final Python code.
+
 | test description              	| issue                                                                                                                                            	| pass 	|
 |-------------------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------	|------	|
 | clear screen                  	| Call the clear_screen function and verify that it clears the terminal screen.                                                                    	| yes  	|
@@ -165,22 +173,25 @@ Deploy your application: Once the connection is established, you can deploy your
 
 Heroku uses a Continuous Deployment (CD) process to automatically pick up changes from a connected Github repository. This CD process can be configured to automatically deploy changes to a Heroku application when new code is pushed to a specified branch on the Github repository. When a new push is made to the specified branch, Heroku automatically pulls the changes, builds and deploys the application to the specified Heroku environment.
 
-In summary, by setting up a remote repository on Github, connecting it to your Heroku application, and configuring a Continuous Deployment (CD) process, you can automate the process of deploying your code changes to Heroku.
 
 
+Heroku needs two additional files in order to deploy.
 
+    requirements.txt
+    Procfile
 
-You can install this project's requirements (where applicable) using:
+Yinstall this project's requirements using:
 
     pip3 install -r requirements.txt 
 
-If you have your own packages that have been installed, then the requirements file needs updated using:
+If you have your own packages, then the requirements file needs updated using:
 
     pip3 freeze --local > requirements.txt
 
-The Procfile can be created with the following command:
+Procfile can be created using the following command:
 
     echo web: node index.js > Procfile
+
 
 
 
@@ -190,7 +201,7 @@ You can clone or fork this project in order to make a local copy on your own sys
 
 Install any applicable packages found within the requirements.txt file.
 
-    pip3 install -r requirements.txt.
+pip3 install -r requirements.txt.
 
 
 Cloning
@@ -203,7 +214,7 @@ You can clone the repository by following these steps:
     Open Git Bash or Terminal
     Change the current working directory to the one where you want the cloned directory
     In your IDE Terminal, type the following command to clone my repository:
-        git clone https://github.com/robinoldman/battleships
+    git clone https://github.com/robinoldman/battleships
     Press Enter to create your local clone.
 
 
