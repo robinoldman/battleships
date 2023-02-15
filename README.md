@@ -213,7 +213,7 @@ By forking the GitHub Repository, you can make a copy of the original repository
 Log into GitHub and locate the GitHub Repository. At the top of the Repository there is a "Fork" button about the "Settings" button on the menu. You should now have a new copy of the original repository in your own GitHub account.
 
 
-##Credits
+## Credits
 
 
 Type Slowly
@@ -234,6 +234,6 @@ Elements of the README were copied and adapted from the Code Institute sample re
 ## ACKNOWLEDGMENTS
 
 My mentor Brian Macharia helped me through many issues and hurdles along the way with expert advice on my CSS and HTML. My Brother Patrick Oldman also supported me and recommended tutorials to watch online to help with any issues.
-Disclaimer
 
+Disclaimer
 The content of this Website is for educational purposes only.
