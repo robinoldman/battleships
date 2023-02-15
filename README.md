@@ -1,3 +1,6 @@
+
+
+![responsive](./images/responsive.png)
 BattleshipsGame - ReadMe
 Introduction
 
@@ -22,11 +25,13 @@ Flowchart
 
 I initially created a flowchart with the basic steps that the program needed to take for it to function. 
 
+![flow chart](./images/flow.png)
+
 
 Welcome Screen
-        In this feature the user is greeted and welcomed to the game, they are prompted to enter their name and start the gmae. I used slow type to add dramtic effect to ther experience. 
+        In this feature the user is greeted and welcomed to the game, they are prompted to enter their name and start the gmae. I used slow type to add dramtic effect to ther experience. The player is then told the rules of the game.
 
-
+![intro](./images/flow.png)
 
 Gameboard
         The gameboard shows both the computer and the player's boards.  It will display M's for misses and a S for ships and H's for a hit.
