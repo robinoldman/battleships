@@ -129,7 +129,7 @@ def play_game():
         print_boards(board_1, board_2)    
         
         # check if computer won
-        if sum([row.count("H") for row in board_1]) == 5:
+        if sum([row.count("H") for row in board_1]) == 7:
             print("Computer won the game!\n")
             global computer_score
             computer_score += 1
@@ -141,7 +141,7 @@ def play_game():
                 sys.exit() 
         
         # check if player 1 won
-        if sum([row.count("H") for row in board_2]) == 1:
+        if sum([row.count("H") for row in board_2]) == 7:
             global score 
             print("Player 1 won the game!\n")
             score += 1
