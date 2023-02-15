@@ -24,36 +24,37 @@ Welcome Screen
 ![intro](./images/intro.png)
 
 Gameboard
-        The gameboard shows both the computer and the player's boards.  It will display M's for misses and a S for ships and H's for a hit.
+
+The gameboard shows both the computer and the player's boards.  It will display M's for misses and a S for ships and H's for a hit.
 
 Gameboard
 
-    Row and Column User Input Request
-        The user input request occurs once the welcome screen has appeared. Here the program asks the user to input the row and column coordinates to the cell in the board where their boats will be placed
+Row and Column User Input Request
+The user input request occurs once the welcome screen has appeared. Here the program asks the user to input the row and column coordinates to the cell in the board where their boats will be placed
 
 User Input Request
 
     
-        This message shows that a co ordinate has already been chosen
+This message shows that a co ordinate has already been chosen
 ![cordinate already selected](./images/already_input.png)
 
-        this message shownc that a co ordinate is out of range
+this message shownc that a co ordinate is out of range
 ![invalid range](./images/invalid_locationa9.png)
-        this message shows that a co ordinate is not a valid character
+this message shows that a co ordinate is not a valid character
 ![invalid character](./images/invalid_inputaa.png)
 
 Missile Count/Hit or Miss Message
 
-    Win or Lose Message and Option to End Program or Play Again
-        once a game has been won or lost the player is able to choose if they would like to play another game or quit. at which point they are able to exit.
+Win or Lose Message and Option to End Program or Play Again
+once a game has been won or lost the player is able to choose if they would like to play another game or quit. at which point they are able to exit.
 
 ![won game](./images/won_game.png)
 
 
 There is something I would change if I had more time.
 
-    emojis for thhe ships and missed
-        This would give a better user experince and make the game more attractive to play
+emojis for thhe ships and missed
+This would give a better user experince and make the game more attractive to play
     
 
 Tools & Technologies Used
@@ -69,13 +70,6 @@ For this program I used the technologies listed below:
    
 
 Data Model
-Flowchart
-
-I used a flowchart to create the app's logic, and mapped out before coding began 
-
-Here is the flowchart.
-
-![flowchart](./images/flow.png)
 
 
 The primary functions and methods I used are:
